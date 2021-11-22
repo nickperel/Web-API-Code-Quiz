@@ -2,7 +2,6 @@ var startBtn = document.querySelector(".start-btn");
 var submitBtn = document.querySelector("#submit");
 const finalScore = document.getElementById("initials").value;
 const latestScore = localStorage.getItem("timer")
-// localStorage.setItem("highScores", )
 finalScore.innerText = timer;
 var currentQuestionIndex = 0;
 var timer = 60;
@@ -70,6 +69,9 @@ function createQuestion() {
     var questionTextH1 = document.createElement("h1");
     questionTextH1.textContent = questionArray[currentQuestionIndex].title;
 
+    // this is a ternary operator which I used instead of an if/else statement to maky my code cleaner
+    // So, if the condition before the "?" is true, it will run the function directly after the "?"
+    // Otherwise, if the condition is false, it will run the function that comes after the colon
     var optionBtn1 = document.createElement("button");
     optionBtn1.textContent = buttonOne;
     optionBtn1.addEventListener("click", buttonOne === correct ? nextQuestion : wrongAnswer)
@@ -151,32 +153,14 @@ var updateLocal = function() {
         highScore = 0;
     }
       
-    // if player has more money than the high score, player has new high score!
     if (timer > highScore) {
-        localStorage.setItem("highscore", JSON.stringify(timer));
-        var x = localStorage.setItem("name", document.getElementsByClassName('card-text').value = text);
-        document.getElementById(finalScore).innerText = x;
+        localStorage.setItem(document.getElementById('initials').value, JSON.stringify(timer));
       
-        alert(finalScore.name + " now has the high score of " + playerInfo.money + "!");
     } else {
-        localStorage.setItem(JSON.stringify(finalScore), JSON.stringify(timer));
-        var x = localStorage.setItem("name", document.getElementById('card-text').value = text);
-        document.getElementById("initials").innerText = finalScore;
-        alert(finalScore.name + " did not beat the high score of " + highScore + ". Maybe next time!");
+        localStorage.setItem(document.getElementById('initials').value, JSON.stringify(timer));
     }
+    location.href="highscore.html"
 }
-
-
-// function fillLocal() {
-//     localStorage.setItem(document.getElementsByClassName('card-text').value);
-// }
-
-    // var finalScore = [
-    //     {
-    //       name: initials.value,
-    //       score: latestScore
-    //     }
-    // };
 
     startBtn.addEventListener("click", startQuiz);
 
