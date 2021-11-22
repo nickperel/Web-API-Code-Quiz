@@ -4,4 +4,4 @@ This week, I was not given a starter code and was challenged with created a code
 
  - Link to website: https://nickperel.github.io/Web-API-Code-Quiz/
 
-![enter image description here](https://www.dropbox.com/s/xs01x9zqkwx3bo8/web-api-challenge.png?dl=0?raw=1)
+![enter image description here](https://www.dropbox.com/s/xs01x9zqkwx3bo8/web-api-challenge.png?raw=1)
