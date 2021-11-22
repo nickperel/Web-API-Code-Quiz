@@ -4,7 +4,7 @@ const finalScore = document.getElementById("initials").value;
 const latestScore = localStorage.getItem("timer")
 finalScore.innerText = timer;
 var currentQuestionIndex = 0;
-var timer = 60;
+var timer = 75;
 
 var questionArray = [
     {
@@ -86,7 +86,7 @@ function createQuestion() {
 
     var optionBtn4 = document.createElement("button");
     optionBtn4.textContent = buttonFour;
-    optionBtn4.addEventListener("click", buttonOne === correct ? nextQuestion : wrongAnswer)
+    optionBtn4.addEventListener("click", buttonFour === correct ? nextQuestion : wrongAnswer)
 
     var quizQuestionsDiv = document.querySelector(".quiz-questions");
 

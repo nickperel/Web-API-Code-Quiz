@@ -16,13 +16,41 @@ function getAllSavedData() {
 var myData = getAllSavedData();
 console.log(myData);
 
-for (let index = 0; index < myData.length; index++) {
+function showHighscore() {
+
+    var list = document.getElementById("highscore-list");
+    for (let index = 0; index < myData.length; index++) {
     
-  
-    console.log(myData[index].initials)
+        var highscore = document.createElement("p");
+        highscore.textContent = myData[index].initials + ": " + myData[index].score;
+        list.appendChild(highscore);
 
-    console.log(myData[index].score);
+        console.log(myData[index].initials)
 
-    console.log('=========')
+        console.log(myData[index].score);
+
+        console.log('=========')
+    
+    }
+
+    var backBtn = document.createElement("button");
+    backBtn.textContent = "Go Back";
+    backBtn.addEventListener("click", function() {
+        location.href="index.html"
+
+    })
+    list.appendChild(backBtn);
+
+    var resetBtn = document.createElement("button");
+    resetBtn.textContent = "Reset Highscores";
+    resetBtn.addEventListener("click", function() {
+        window.localStorage.clear()
+        location.href="highscore.html"
+
+    })
+    list.appendChild(resetBtn);
+
     
 }
+
+showHighscore();
