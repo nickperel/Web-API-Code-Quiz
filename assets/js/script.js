@@ -1,24 +1,52 @@
 var startBtn = document.querySelector(".start-btn");
 var submitBtn = document.querySelector("#submit");
+const finalScore = document.getElementById("initials").value;
+const latestScore = localStorage.getItem("timer")
+// localStorage.setItem("highScores", )
+finalScore.innerText = timer;
 var currentQuestionIndex = 0;
-var timer = 15;
+var timer = 60;
 
 var questionArray = [
     {
-        title: "Question 1",
-        buttonOne: "option one",
-        buttonTwo: "option two",
-        buttonThree: "option three",
-        buttonFour: "option four",
-        correct: "option two"
+        title: "Commonly used data types do NOT include:",
+        buttonOne: "1. Strings",
+        buttonTwo: "2. Booleans",
+        buttonThree: "3. Alerts",
+        buttonFour: "4. Numbers",
+        correct: "3. Alerts"
     },
     {
-        title: "Question 2",
-        buttonOne: "option one",
-        buttonTwo: "option two",
-        buttonThree: "option three",
-        buttonFour: "option four",
-        correct: "option two"
+        title: "The condition in an if/else statement is enclosed with ___________.",
+        buttonOne: "1. Quotes",
+        buttonTwo: "2. Curly Brackets",
+        buttonThree: "3. Square Brackets",
+        buttonFour: "4. Parenthesis",
+        correct: "4. Parenthesis"
+    },
+    {
+        title: "Arrays in JavaScript can be used to store __________.",
+        buttonOne: "1. Numbers and Strings",
+        buttonTwo: "2. Other Arrays",
+        buttonThree: "3. Booleans",
+        buttonFour: "4. All of the Above",
+        correct: "4. All of the Above"
+    },
+    {
+        title: "String values must be enclosed within ______ when being assigned to variables.",
+        buttonOne: "1. Quotes",
+        buttonTwo: "2. Commas",
+        buttonThree: "3. Curly Brackets",
+        buttonFour: "4. Parenthesis",
+        correct: "1. Quotes"
+    },
+    {
+        title: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        buttonOne: "1. JavaScript",
+        buttonTwo: "2. console.log",
+        buttonThree: "3. for loops",
+        buttonFour: "4. terminal/bash",
+        correct: "2. console.log"
     },
 ]
 
@@ -125,12 +153,16 @@ var updateLocal = function() {
       
     // if player has more money than the high score, player has new high score!
     if (timer > highScore) {
-        localStorage.setItem("highscore", timer);
-        localStorage.setItem("name", document.getElementsByClassName('card-text').value);
+        localStorage.setItem("highscore", JSON.stringify(timer));
+        var x = localStorage.setItem("name", document.getElementsByClassName('card-text').value = text);
+        document.getElementById(finalScore).innerText = x;
       
-        alert(playerInfo.name + " now has the high score of " + playerInfo.money + "!");
+        alert(finalScore.name + " now has the high score of " + playerInfo.money + "!");
     } else {
-        alert(playerInfo.name + " did not beat the high score of " + highScore + ". Maybe next time!");
+        localStorage.setItem(JSON.stringify(finalScore), JSON.stringify(timer));
+        var x = localStorage.setItem("name", document.getElementById('card-text').value = text);
+        document.getElementById("initials").innerText = finalScore;
+        alert(finalScore.name + " did not beat the high score of " + highScore + ". Maybe next time!");
     }
 }
 
@@ -141,8 +173,8 @@ var updateLocal = function() {
 
     // var finalScore = [
     //     {
-    //       name: playerOne,
-    //       score: timer
+    //       name: initials.value,
+    //       score: latestScore
     //     }
     // };
 
